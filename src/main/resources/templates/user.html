@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>профиль</title>
+</head>
+<body>
+<h1>Профиль Санька</h1>
+<p>Логин: <span th:text="${login}">Грузится...</span></p>
+<p>Юзернейм: <span th:text="${name}">тоже грузится...</span></p>
+<p>Почта: <span th:text="${email}">и это грузится...</span></p>
+
+<form th:action="@{/logout}" method="post">
+    <button type="submit">Ливнуть</button>
+</form>
+</body>
+</html>
