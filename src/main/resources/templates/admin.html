@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin panel</title>
+</head>
+<body>
+<h1>Админ паель</h1>
+<h2>Все пользователи:</h2>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Логин</th>
+        <th>Юзернейм</th>
+        <th>email</th>
+        <th>роль</th>
+    </tr>
+
+    <tr th:each="user : ${users}">
+        <td th:text="${user.id}">1</td>
+        <td th:text="${user.login}">login</td>
+        <td th:text="${user.name}">name</td>
+        <td th:text="${user.email}">email</td>
+        <td th:text="${user.role}">role</td>
+    </tr>
+</table>
+    <br>
+    <a href="/user">Вернуться в профиль</a>
+
+    <form th:action="@{/logout}" method="post">
+        <button type="submit">выйти</button>
+    </form>
+</body>
+</html>
